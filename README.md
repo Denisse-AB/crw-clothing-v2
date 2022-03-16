@@ -1,4 +1,4 @@
-# New Crown Clothin Store 2022
+# New Crown Clothing Store 2022
 march 15, 2022
 
 # Getting Started with Create React App
