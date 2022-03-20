@@ -4,7 +4,7 @@ import { createUserAuthWithEmailAndPassword, createUserDocumentFromAuth } from "
 import FormInput from "../form-inputs/form-input";
 import Button from "../button/button";
 
-import './sign-up.scss';
+import '../sign-up/sign-up.scss';
 
 const defaultFormFields = {
   displayName: '',
@@ -32,12 +32,11 @@ const SignUp = () => {
     }
 
     try {
-      const {user} = createUserAuthWithEmailAndPassword(email, password)
+      const {user} = await createUserAuthWithEmailAndPassword(email, password)
 
-      // TODO: cant catch error
-      await createUserDocumentFromAuth(user, { displayName })
+      const response = await createUserDocumentFromAuth(user, { displayName })
 
-      resetFormFields()
+      resetFormFields();
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         alert('User Already Exists')
