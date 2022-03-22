@@ -4,12 +4,7 @@ import Home from './routes/home';
 
 import Navigation from './routes/navigation/navigation';
 import SignInUp from './routes/sign-in-up/signInUp';
-
-const Shop = () => {
-  return (
-    <h1>Shop Page</h1>
-  );
-}
+import Shop from './routes/shop/shop';
 
 const App = () => {
   return (
