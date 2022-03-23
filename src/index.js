@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { UserProvider } from './context/user-context';
 import { ProductsProvider } from './context/products-context';
-import './index.css';
+import { CartProvider } from './context/cart-context';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
         <ProductsProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
