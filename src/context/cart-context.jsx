@@ -67,7 +67,8 @@ export const CartProvider = ({ children }) => {
   const clearItemFromCart = (productToClear) => {
     setCartItems(clearCartItem(cartItems, productToClear))
   }
-  // Imperative function that can return a cleanup function (mutation)
+  // Imperative function that can return a cleanup function
+  // componentDidMount, componentDidUpdate, and componentWillUnmount combined
   useEffect(() => {
      const newItemsCount = cartItems.reduce((total, cartItem) =>
       total + cartItem.quantity, 0)
