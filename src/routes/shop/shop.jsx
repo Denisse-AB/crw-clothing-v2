@@ -1,18 +1,17 @@
-import { useContext, Fragment } from "react";
-import { CategoriesContext } from "../../context/categories-context";
-import CategoryPreview from '../../components/category-preview/category-preview';
+// Nested route, will split in two children.
+import { Routes, Route } from 'react-router-dom';
+import CategoriesPreview from '../categories-preview/categories-preview';
+import Category from '../category/category';
+
 import './shop.scss';
 
 const Shop = () => {
-  const { categoriesMap } = useContext(CategoriesContext);
 
- return (
-    <div className='shop-container'>
-      {Object.keys(categoriesMap).map((key) => {
-        const products = categoriesMap[key];
-        return <CategoryPreview key={key} title={key} products={products} />;
-      })}
-    </div>
+  return (
+    <Routes>
+      <Route index element={<CategoriesPreview />} />
+      <Route path=':category' element={<Category />} />
+    </Routes>
   );
 }
 
