@@ -3,5 +3,4 @@
 -Hooks
 -Functional Components
 -Firebase
--Graph Ql
 -Styled Components

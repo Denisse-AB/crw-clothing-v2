@@ -8,7 +8,9 @@ import { SignOut } from "../../utils/firebase/firebase";
 import CartIcon from "../../components/cart-icon/cart-icon";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown";
 
-import './navigation.scss';
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './navigation-style';
+
+// import './navigation.scss';
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext)
@@ -17,23 +19,23 @@ const Navigation = () => {
   // console.log(currentUser)
   return (
     <Fragment>
-      <div className="navigation">
-        <Link className="logo-container" to='/'>
+      <HeaderContainer>
+        <LogoContainer to='/'>
           <Logo className="logo" />
-        </Link>
-        <div className="nav-links-container">
-          <Link className="nav-link" to='/shop'>
+        </LogoContainer>
+        <OptionsContainer>
+          <OptionLink to='/shop'>
             Shop
-          </Link>
+          </OptionLink>
           {
             currentUser
-            ? <span className="nav-link" onClick={SignOut}>Sign Out</span>
-            : <Link className="nav-link" to='/sign-in'>Sign In</Link>
+            ? <OptionLink as="span" onClick={SignOut}>Sign Out</OptionLink>
+            : <OptionLink to='/sign-in'>Sign In</OptionLink>
           }
           <CartIcon />
-        </div>
+        </OptionsContainer>
         { isHidden && <CartDropdown />}
-      </div>
+      </HeaderContainer>
       <Outlet />
     </Fragment>
   );
