@@ -11,17 +11,18 @@ const CartDropdown = () => {
   const { cartItems, isHidden, setHidden } = useContext(CartContext);
   const navigate = useNavigate();
 
-  const toggleHidden = () => setHidden(!isHidden);
+  const checkoutHandler = () => navigate('/checkout');
+  // const toggleHidden = () => setHidden(!isHidden);
 
   return (
     <div className='cart-dropdown-container'>
       <div className='cart-items'>
-        {cartItems.map(item => <CartItem key={item.id} cartItem={item} />)}
+        { cartItems.length ?
+          (cartItems.map(item => <CartItem key={item.id} cartItem={item} />))
+          : (<span className='empty'>Your Cart Is Empty</span>)
+        }
       </div>
-      <Button onClick={() => {
-        {toggleHidden}
-        navigate('/checkout')
-      }}>Go to Checkout</Button>
+      <Button onClick={checkoutHandler}>Go to Checkout</Button>
     </div>
   );
 }

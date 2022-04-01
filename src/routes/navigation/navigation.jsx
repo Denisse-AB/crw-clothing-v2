@@ -14,7 +14,7 @@ const Navigation = () => {
   const { currentUser } = useContext(UserContext)
   const { isHidden } = useContext(CartContext)
 
-  console.log(currentUser)
+  // console.log(currentUser)
   return (
     <Fragment>
       <div className="navigation">
