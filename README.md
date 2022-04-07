@@ -1,6 +1,6 @@
 # New Crown Clothing Store 2022
--march 15, 2022
--Hooks
--Functional Components
--Firebase
--Styled Components
+- march 15, 2022
+- Hooks
+- Functional Components
+- Firebase
+- Styled Components
