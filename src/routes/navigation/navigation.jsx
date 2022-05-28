@@ -16,7 +16,6 @@ const Navigation = () => {
   const { currentUser } = useContext(UserContext)
   const { isHidden } = useContext(CartContext)
 
-  // console.log(currentUser)
   return (
     <Fragment>
       <HeaderContainer>

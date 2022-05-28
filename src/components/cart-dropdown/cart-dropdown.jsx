@@ -8,10 +8,14 @@ import CartItem from '../cart-item/cart-item';
 import './cart-dropdown.scss';
 
 const CartDropdown = () => {
+  const {isHidden, setHidden } = useContext(CartContext)
   const { cartItems } = useContext(CartContext);
   const navigate = useNavigate();
 
-  const checkoutHandler = () => navigate('/checkout');
+  const checkoutHandler = () => {
+    navigate('/checkout'),
+    setHidden(!isHidden)
+  };
 
   return (
     <div className='cart-dropdown-container'>
